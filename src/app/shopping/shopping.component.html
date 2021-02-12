@@ -1,0 +1,35 @@
+<input class="form-control" type="text" name="search" [(ngModel)]="names" autocomplete="off" 
+placeholder=" Start searching by Name" (keydown.enter)="search($event)">
+<table>
+ 
+    <div *ngIf="check">
+        <tr>
+            <th><strong>Product Name</strong></th>
+        </tr>
+    <tr *ngFor="let p of products">
+            <td >{{p}}</td>
+        <td>
+            <button class="btn btn-success" (click)="onclick(p)">Add To Cart</button>
+        </td>
+    </tr>
+    </div>
+    <div *ngIf="productsduplicate.length!==0;else elseblock">
+        <tr>
+            <th><strong>Product Name</strong></th>
+        </tr>
+    <tr *ngFor="let pd of productsduplicate">
+        <td >{{pd}}</td>
+    <td>
+        <button class="btn btn-success"(click)="onclick(pd)">Add To Cart</button>
+    </td>
+</tr>
+</div>
+<ng-template #elseblock>
+    <div *ngIf="!check" class="notfound">
+        <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+            <strong>Soory!</strong> Not Found.
+          </div>
+    </div>
+</ng-template>
+</table>

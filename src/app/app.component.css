@@ -1,0 +1,41 @@
+body{
+    margin:0px;
+    padding:10px;
+    text-align:center;
+}
+header{
+    padding:20px;
+    background: lightblue;
+    border-radius:20px;
+    font-style:normal;
+    font-weight: bold;
+}
+ section{
+     width:70%;
+     float: left;
+     height: fit-content;
+     background: lightgray;
+    }
+aside{
+        width:28%;
+        float: left;
+        height:fit-content;
+        margin-left: 2%;
+        background: lightgray;
+       }
+       .maindiv
+       {
+           margin:10px 0px;
+       }
+       .maindiv *
+       {
+           border-radius: 10px;
+       }
+.maindiv::after
+    {
+        content: "";
+        clear:both;
+        display: table;
+
+
+    }
